@@ -468,6 +468,43 @@ app.post('/api/auction/reset', (req, res) => {
   broadcastState();
   res.json({ success: true });
 });
+// Home Route
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>IPL Auction Backend</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding: 50px;
+          background: #f5f5f5;
+        }
+        h1 {
+          color: #333;
+        }
+        a {
+          display: block;
+          margin: 10px;
+          color: blue;
+          text-decoration: none;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>🏏 IPL Auction Backend Running Successfully</h1>
+      <p>Available APIs</p>
+
+      <a href="/api/state">View Auction State</a>
+      <a href="/api/teams">View Teams</a>
+      <a href="/api/players">View Players</a>
+
+    </body>
+    </html>
+  `);
+});
 
 // ---------- SOCKET.IO ----------
 io.on('connection', (socket) => {
