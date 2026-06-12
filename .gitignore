@@ -1,0 +1,5 @@
+node_modules/
+db/data.json
+public/uploads/*
+!public/uploads/.gitkeep
+*.log
